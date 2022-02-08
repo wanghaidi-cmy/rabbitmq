@@ -59,26 +59,26 @@ public class Producer {
          * 参数4: 是否在不使用的时候自动删除队列
          * 参数5：队列其他参数
          */
-        channel.queueDeclare(TOPICS_QUEUE1, true, false, false, null);
+       /* channel.queueDeclare(TOPICS_QUEUE1, true, false, false, null);
         channel.queueDeclare(TOPICS_QUEUE2, true, false, false, null);
         //5.队列绑定交换机
-        channel.queueBind(TOPICS_QUEUE1,TOPICS_EXCHANGE,"topic.update");
-        channel.queueBind(TOPICS_QUEUE1,TOPICS_EXCHANGE,"topic.delete");
-        channel.queueBind(TOPICS_QUEUE2,TOPICS_EXCHANGE,"topic_insert");
+        channel.queueBind(TOPICS_QUEUE1, TOPICS_EXCHANGE, "topic.update");
+        channel.queueBind(TOPICS_QUEUE1, TOPICS_EXCHANGE, "topic.delete");
+        channel.queueBind(TOPICS_QUEUE2, TOPICS_EXCHANGE, "topic.insert");*/
         //6.发送消息
         String message = "新增了商品。Topic模式；routing key 为 topic.insert";
         channel.basicPublish(TOPICS_EXCHANGE, "topic.insert", null, message.getBytes());
-        System.out.println("已发消息："+message);
+        System.out.println("已发消息：" + message);
 
         //发送消息
         message = "修改了商品。Topic模式；routing key 为 topic.update";
         channel.basicPublish(TOPICS_EXCHANGE, "topic.update", null, message.getBytes());
-        System.out.println("已发消息："+message);
+        System.out.println("已发消息：" + message);
 
         //发送消息
-        message = "删除了商品。Topic模式；routing key 为 topic.delete" ;
-        channel.basicPublish(TOPICS_EXCHANGE,"topic.delete",null,message.getBytes());
-        System.out.println("已发消息："+message);
+        message = "删除了商品。Topic模式；routing key 为 topic.delete";
+        channel.basicPublish(TOPICS_EXCHANGE, "topic.delete", null, message.getBytes());
+        System.out.println("已发消息：" + message);
 
         //7.关闭资源
         channel.close();

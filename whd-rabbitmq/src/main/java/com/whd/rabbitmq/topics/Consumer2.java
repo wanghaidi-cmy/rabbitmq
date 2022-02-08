@@ -42,8 +42,8 @@ public class Consumer2 {
         /**
          * 5.队列绑定交换机
          */
-        channel.queueBind(Producer.TOPICS_QUEUE2, Producer.TOPICS_EXCHANGE, "topic.insert");
-        //channel.queueBind(Producer.TOPICS_QUEUE1, Producer.TOPICS_EXCHANGE, "topic.delete");
+        channel.queueBind(Producer.TOPICS_QUEUE2, Producer.TOPICS_EXCHANGE, "topic.*");
+
         /**
          * 6.创建消费者，并设置处理消息
          * consumerTag 消息者标签，在channel.basicConsume时候可以指定
@@ -68,6 +68,6 @@ public class Consumer2 {
          *       息，设置为false则需要手动确认
          * 参数3：消息接收到后回调
          */
-        channel.basicConsume(Producer.TOPICS_QUEUE2,true,defaultConsumer);
+        channel.basicConsume(Producer.TOPICS_QUEUE2, true, defaultConsumer);
     }
 }
