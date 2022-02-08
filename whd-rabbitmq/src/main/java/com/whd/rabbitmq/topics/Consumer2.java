@@ -47,7 +47,7 @@ public class Consumer2 {
         /**
          * 6.创建消费者，并设置处理消息
          * consumerTag 消息者标签，在channel.basicConsume时候可以指定
-         * envelope 消息包的内容，可从中获取消息id，消息routingkey，交换机，消息和重传标志
+         * envelope 消息包的内容，可从中获取消息id，消息routing key，交换机，消息和重传标志
          *          (收到消息失败后是否需要重新发送)
          * properties 属性信息
          * body 消息

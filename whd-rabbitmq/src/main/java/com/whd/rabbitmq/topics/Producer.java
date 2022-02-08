@@ -59,7 +59,7 @@ public class Producer {
          * 参数4: 是否在不使用的时候自动删除队列
          * 参数5：队列其他参数
          */
-       /* channel.queueDeclare(TOPICS_QUEUE1, true, false, false, null);
+      /*  channel.queueDeclare(TOPICS_QUEUE1, true, false, false, null);
         channel.queueDeclare(TOPICS_QUEUE2, true, false, false, null);
         //5.队列绑定交换机
         channel.queueBind(TOPICS_QUEUE1, TOPICS_EXCHANGE, "topic.update");

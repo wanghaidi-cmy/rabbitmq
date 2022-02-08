@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    host: localhost
+    virtual-host: /whd
+    username: whd
+    password: whd
+    port: 5672
